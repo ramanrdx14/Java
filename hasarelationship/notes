@@ -1,0 +1,94 @@
+HAS-A Relationship (Association)
+---------------------------------
+
+
+-> Association is relation between two separate classes which establishes through their objects -
+
+-> Association has 4 types :- 
+------------------------------
+
+1. One-to-One Association
+
+2. One-to-Many Association
+
+3. Many-to-One Association
+
+4. Many-to-Many Association
+
+-> Association has 2 forms :-
+-------------------------------
+
+1. Composition
+
+2. Aggregation
+
+
+=====================================================================================
+One-to-One Association :-
+--------------------------
+-> Real World Example :-
+
+1. One person has one passport
+2. One employee has one employee id
+3. One student has one roll no
+
+-> it is the relationship between entities where one instance 	of an entity should
+   be mapped only to one instance of another entity.
+=====================================================================================
+One-to-Many Association :-
+---------------------------
+-> Real World Example :-
+
+1. One person can have multiple phone numbers
+2. One student can have multiple courses
+3. One person can have multiple bank account
+4. One machine can have multiple functionalities
+
+-> it is the relation between the entity class where the one instance of entity
+   should be mapped to multiple instance of the another entity.
+=====================================================================================
+Many-to-one Association :
+--------------------------
+-> Real World Example :-
+
+1. Many Colleges can associate with one university.
+2. Multiple cities exist in one state.
+3. Many Ports can exist in one extension
+4. Multiple Students can have one branch
+
+-> It is the relation between entities where the multiple instances of the 
+   entity should be mapped with exactly one instance of another entity.
+=====================================================================================
+Many-to-Many Association :
+--------------------------
+-> Real World Example :-
+
+1. Multiple Customers can buy multiple products and multiple products can bought
+   by multiple customers.
+2. Multiple student can associate with multiple teachers and multiple teachers are
+   associated with multiple students.
+   
+3. Multiple Students can have Multiple Languages
+
+=====================================================================================
+
+Association 2 types:
+--------------------
+1. Composition(Strong Bonding)
+2. Aggregation(Weak Bonding)
+
+
+Difference Between Composition and Aggregation
+----------------------------------------------
+Composition :- Car HAS-A Engine       (strong bond)
+Aggregation :- Car Has-A Music Player (weak bond)
+
+================================================================================
+QUESTION:
+---------
+When To use what ?
+=> If we want to inherit all parent properties into the child class then
+   we should go for IS-A Relationship
+   
+   If we only want to use partial inheritance then we should go for 
+   HAS-A Relationship
