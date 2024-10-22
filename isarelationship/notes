@@ -1,0 +1,101 @@
+Relationship Between Classes :
+-------------------------------
+
+=> Use of relationship between java classes 
+  1. Core Reusability
+  2. Less Memory Consumption
+  3. Less Execution Time
+  
+  
+  Types of relationship :
+  -----------------------
+  1. IS-A relationship (Inheritance)
+  	 Is a relationship is the one of which data members of one class is obtained 
+  	 into another class through the concept of inheritance.
+  	 
+  2. HAS-A relationship(Association)
+  	HAS-A relationship is one in which an object of one class is created as the 
+    data member into another class.
+  
+  	2.1 Aggregation
+  	2.2 Composition
+  	
+  3. USE-A Relationship(dependence)
+     USE-A relationship is one in which a method is uses a object of another class.
+     
+     
+     
+UML Notation in Java =>
+
+
+
+Inheritance :
+------------
+IS-A relationship is also known as "Inheritance"
+
+1. class
+
+2. Sub-Class / Child Class
+
+3. Super-Class / Parent Class
+
+4. Reusability
+
+- IS-A Relationship :-
+
+-> It is also known as "Inheritance"
+
+-> IS-A Relationship or Inheritance is achieved by using "extends" key -> All java classes except Object class will always have one parent class thus we can say that the total java API is implemented based on inheritance concept
+
+
+Use of inheritance :-
+---------------------
+
+1. Code Reusability
+
+2. For Method Overriding to achieve runtime polymorphism
+
+
+
+Types Of Inheritance :
+-----------------------
+1. Single Inheritance 
+2. Multilevel Inheritance
+3. Hierarchical Inheritance
+4. Multiple Inheritance
+5. Hybrid Inheritance
+
+
+Note :	By Default if any java class does'not inherit any parent class then 
+		it inherit Object class .
+		
+		There can be only one parent class for every class due to this the java
+		does't support the multiple inheritance.
+
+
+Points to Remember :-
+---------------------
+-> Default Parent Class: By default if any java class does not inherit
+   any parent class then it inherits Object class -> Parent class can only
+   be one: There can be only one parent class for every class and due to this
+   java does not support multiple inheritance
+
+-> Which part is not inherited :-
+
+1. Private members of parent class is not inherited in child class
+
+2. Constructors are not inherited because constructors are not the part of class members (class members are only fields, methods, nested classes)
+
+
+-> Cyclic inheritance is not possible
+--------------------------------------
+
+1. class A extends A
+
+2. 	class A extends B {-}
+
+	class B extends A {-}	
+
+-> Multiple & Hybrid inheritance is not supported by java but in the case of
+   interface we can acheive this 
+  
