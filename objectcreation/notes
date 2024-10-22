@@ -1,0 +1,51 @@
+How Objects are Created ?
+-------------------------
+
+When we compile the program javac Animal.java
+Compiler will check the syntex and if the syntex is correct then it will create .class
+files. No of .class files will be generated depending on the number of classes present
+in the file.
+
+When we run the program.
+2.1 Animall file will loaded in JVM mem area which is method Area
+
+2.2 An object of java.lang.class will be created insite the heap area in which 
+    Animal main class metadata will be stored
+
+2.3 Now Main Method will be executed and for this JVM will create a new thread known
+    as main thread.
+
+2.4 As soon as main thread is created then the JVM will create a main stack in Stack 
+    Area
+    
+2.5 Now thread will execute line Animall a = new Animall() and it will load the Animall
+    class inside the Method Area and a new Object is created in the Heap Area.
+    
+    
+2.6 Now there is new keyword so new object creation process will start. 
+	JVM will instruct heap manager to create an object of Animal class but heap
+ 	manager will ask for object size to JVM. Then JVM will calculate the size of
+  	object according to the number of instance variables that are declared in Animal 
+  	class and this size will be taken by heap manager and heap manager will create
+  	an object in heap area
+
+2.7 As soon as heap manager creates an object, a unique integer value will be assigned
+	 to the object which is known as "hashcode"
+
+2.8 This hascode value will be provided to the JVM and JVM will convert this hascode 
+	vallue into hexadecimal form and this hexadecimal value is known as reference value
+
+2.9. Now this hexadecimal value will be assigned to the variable which is known as 
+	 reference variable
+
+2.10 Now object will be initialized that means all instance variables will be assigned 
+	by default values or by their original values.
+	
+	
+	
+=====================================================================================
+java.lang.Class
+java.lang.Object
+java.lang.reflect.Method
+java.lang.reflect.Constuctor
+=====================================================================================
