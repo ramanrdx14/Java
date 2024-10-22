@@ -39,7 +39,7 @@ public class OneToOneDemo {
 		Employee emp1   = new Employee("Raman","123",addr1);
 		emp1.showEmpDetails();
 		Address addr2 = new Address("JL","JHY","HYD");
-		Employee emp2   = new Employee("GhU","198",addr1);
+		Employee emp2   = new Employee("GhU","198",addr2);
 		emp2.showEmpDetails();
 		
 	}

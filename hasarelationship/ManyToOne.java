@@ -31,7 +31,7 @@ public class ManyToOne {
 		Studentt s2= new Studentt("S-22", "ABC",b1);
 		Studentt s3= new Studentt("S-33", "DEF",b1);
 		s1.show();
-		s3.show();
+		s2.show();
 		s3.show();
 	}
 
