@@ -1,0 +1,114 @@
+Constructor
+------------
+
+-> Constructors are the special class methods same as class name which do not have
+   return type.
+   
+   Example:
+   --------
+   class Test{
+   
+   	Test(){
+   	}
+   	
+   }
+   
+--> Use of constructor is used to initialize the objects.
+--> Constructor are executed automatically at the time of object creation.
+
+
+Types of constructor:
+---------------------
+1. Default
+2. 0-Arguement Constructor
+3. Parameterized
+
+4. To checked the Default Constructor we can use "javap classname.java"
+
+
+
+Default Constructor:
+--------------------
+-> When ever we don't create any constructor in the class, then the compiler will
+   always create a constructor which is known as default constructor.
+  
+-> Default constructor is used to provide the default values to the object like 
+   0,null etc depending on the type.
+   
+-> If the programmer use any constructor then JVM will not create any constructor
+
+-> We can use any access modifiers for the constructor.
+
+-> Access Modifiers for the default constructor cannot be private or protected because
+   the outer class cannot be private or protected.
+
+-> Default constructor has only one line of code 
+
+ class Test{
+   
+   	Test(){
+   	  super();
+   	}
+   	
+  }
+
+   
+   
+   
+Note:
+----
+We cannot use abstract,final,static,synchronized keywords in the constructor
+
+
+
+
+0 - Args Constructors:
+-----------------------
+This constructors are created by the programmer.
+
+class Test{
+	
+	Test(){
+	
+	}
+	
+}
+
+
+Parameterized Constructor :
+----------------------------
+This constructors are created by the programmer.
+
+class Test{
+	
+	Test(int a,int b){
+	
+	}
+	
+	
+Difference Between Constructor & methods:
+-------------------------------------------
+1. Methods always have return type
+   Constructors doesn't have return type
+   
+2. Methods can have valid name
+   Constructor can have name as same Class name
+   
+3. Methods are used to perform the particular task 
+   Constructor are used to initialize the Objects
+   
+   
+Topics:
+-------
+1. constructors can be inherited
+2. constructors can be overloading and overriding
+3. constructor  chaining using this keyword
+4. use of super keywords
+5. constructors with abstract class and interface
+
+
+Note:
+----
+Constructor is predefined class present inside the java.lang.reflect package
+
+Constructor class is used to get the constructor related information
