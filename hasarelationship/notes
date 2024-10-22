@@ -70,6 +70,9 @@ Many-to-Many Association :
    
 3. Multiple Students can have Multiple Languages
 
+-> It is the relationship in which the multiple instances of entity should be
+   mapped with multiple instances of another entities.
+
 =====================================================================================
 
 Association 2 types:
