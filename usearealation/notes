@@ -1,0 +1,37 @@
+Dependency Injection :
+----------------------
+-> Dependency Injection is the concept in which Object gets other required
+   Object from the outside entity.
+
+-> The Process of injecting of dependent object into the contained object
+   is called dependency injection.
+   
+-> While programming the java classes should be minimum dependent as 
+   less as possible.by this we will increase the possibility of the 
+   reusing the classes and able to test them independently.
+   
+Outer object : Container Object
+Inner object : Contained object
+
+
+
+Types of Dependency Injection :
+-------------------------------
+1. Constructor Dependency Injection   based 
+2. Setter Method Dependency Injection based
+
+
+Circular DI:
+------------
+it is the process of depending two objects in the circular form 
+one object is dependent on second object and second object is dependent
+on first object.
+
+Note: We can't achieve Circular DI with constructor
+
+
+Uses-A Relationship :
+---------------------
+It is the relationship in which the a method of one class uses a 
+Object of another class.
+
