@@ -1,0 +1,93 @@
+Polymorphism :
+-------------
+
+-> Poly means (Many) +  morphism (forms,structure)
+-> Real world Example : 
+	1. Sound (car,birds,animal,slap) 
+	2. Water (Solid,Liquid,Gas)
+	
+Advantage of Polymorphism ?
+---------------------------
+
+1. It provides the flexibility to develop the application it allow us to perform the 
+   single task by different ways.
+   
+Types :
+--------
+1. Compile Time 
+2. Run Time Polymorphism
+ 
+==========================================================================================
+1. Compile Time Polymorphism ?
+
+-> It is known as static Polymorphism or Early Binding
+-> If the polymorphism is achieved at compile time then it is said as compile time Polymorphism.
+-> compile time Polymorphism can be achieved by two ways:-
+	1. Method Overloading
+	2. Operator Overloading(Operator Overloading is not supported in java except '+')
+	
+2. Run Time Polymorphism ?
+
+-> It is known as Dynamic Polymorphism or late binding
+-> If the polymorphism is existed at runtime then it is known as Runtime 
+   Polymorphism 
+   
+-> Runtime polymorphism can be achieved by "Method Overriding"
+=======================================================================================
+
+==> Method Overloading ?
+
+The Process of  compiler trying to resolve then method call based on the reference type
+then it is known as method overloading.
+
+Rules of Method Overloading
+	1. Same Name
+	2. Within same class
+	3. Different Parameter
+		-> No of Parameter
+		-> Type of Parameter
+		-> Sequence of Parameter
+	
+=====================================================================================
+
+==> Method Overloading ?
+
+The Process of  JVM trying to resolve then method call based on the reference type
+then it is known as method overloading.
+
+It is the concept in which the child class is trying to change the implementation
+of parent class method 
+
+Rules :
+------
+ 1. Same name
+ 2. within different class
+ 3. Same Parameter 
+ 	- No Of Parameters
+ 	- Types Of Parameters
+ 	- Sequence of Parameters
+ 4. IS-A Relationship
+
+
+Cases for method overriding :
+------------------------------
+ 
+ =====================================================================================
+ Typecasting : The process of conversion of one datatype to another data type is
+               called type casting.
+               
+               
+ Object Typecasting : The process of conversion of one Object to another Object type 
+ 					  is called type casting.
+ 					  
+ 
+ 
+ 					1. Upcasting      : Parent p = new Child();
+ 					2. Downcasting    : Child c  = new Parent(); Not possible directly
+ 					
+ 					
+ 				    Explicit downcasting is possible
+ 				    Syntex:
+ 				    Parent p = new Child();
+ 				    Child c  = (Child)p;
+ 					
