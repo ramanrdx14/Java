@@ -1,0 +1,113 @@
+Data-Hiding :
+------------
+1. Data hiding is the process of hiding the data from the outside 
+   users.
+
+2. It is achieved by private access modifier
+
+Example :
+---------
+class Account{
+	private int bal; // data hiding
+	//code
+}
+
+To access or modify or update the private variables java provide
+some special methods ex: getter and setter methods.
+
+It is highly recomended to declare the data members as private.
+
+=====================================================================
+
+Abstraction :
+-------------
+Hiding the inner implemenations and showing the set of services
+we are offering.
+
+Ex: Car Internal working of brake,gear are hidden
+    ATM Machine is implemented in which language,DB connection hidden 
+    It is achieved by abstract class and interface
+    
+=====================================================================
+
+Abstract Class:
+--------------
+These contain both concrete and abstract method.
+
+abstract class Test{
+
+abstract void sum();
+
+void mux(){
+
+}
+
+
+}
+=====================================================================
+Points to Remember :
+--------------------
+
+1. If the class contains abstract methods then the class should be
+   declared as abstract class
+
+2. If we declare any abstract class, then it can contain both 
+   concrete methods and abstract methods.
+   
+3. We can not instantiate of an abstract class but we can declare
+   the reference for the abstract class.
+   
+4. If any class inherits abstract class then it should implement 
+   all the abstract methods or that class should be declared as
+   abstract.
+   
+5. When ever we are using abstraction then the method overriding
+   concept will be used.
+   
+6. Abstract class can have constructors.
+
+7. Abstract class can inherit the concrete class.
+
+=====================================================================
+    
+Abstract Methods :
+-------------------
+Abstract Methods are those whose implementation part is hided.
+
+Abstract methods are those who does'not have body(implementation)
+
+Abstract methods are those who have only declaration part not
+implementation.
+
+To declare abstract methods we have to use abstract keywords
+
+Ex:
+--
+abstract void sum();
+
+
+=====================================================================
+
+Interview Questions :
+---------------------
+1. Concrete Methods vs Abstract method?
+
+=> Abstract has only declaration
+   Concrete has declaration and implementation
+   
+=> Abstract method uses abstract keyword
+   We don't  have to use abstract keyword
+   
+   
+2. Concrete class and Abstract class ?
+
+=> Concrete class can contain concrete methods
+   Abstract class can contain  both abstract and concrete methods
+   
+   We can not create Object for abstract class
+   We can create object for abstract class
+   
+   Abstract class can be declared by abstract keyword.
+   Concrete class does not contain abstract keyword
+   
+
