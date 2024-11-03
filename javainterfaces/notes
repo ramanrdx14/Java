@@ -1,0 +1,101 @@
+Interfaces :
+------------
+These are similar to abstract class which can contain variables
+and methods but having all the variables and method as public 
+static final and methods as public abstract.
+
+
+All the methods in the interface are abstract they don't have 
+implementations.
+
+Interface is the blue print of class which specifies what must do
+but not how ..
+
+Syntex:
+-------
+
+access_modifier interface interface_name extends i2,i3,i4..{
+
+--X--- varibales(public static final)
+--X---(public abstract)
+
+}
+
+
+interface Vehicle{
+  
+  void start();
+  void changeGear();
+}
+
+
+-> Use Of Interface :
+---------------------
+1. It is used to achieve total abstraction.
+
+2. It is used to achieve multiple inheritance(as multiple inheritance is not in java in classes)
+
+3. It is used achieve loose coupling
+
+================================================================================================
+
+Interview Questions :
+---------------------
+What is the difference between concrete class,abstract class
+and interface  
+
+=> Concrete class can only contain concrete methods
+   Abstract class can contain both abstract and concrete methods
+   Interfaces can contain abstract methods
+   
+   
+=> We use class keyword for concrete class
+   We use abstract keyword for abstract class
+   we use interface keyword for interfaces
+   
+=> We can create objects for concrete class
+   We can not create object for Interface and Abstract class.we can provide Reference variable name
+   
+
+=> We cannot achieve abstraction from concrete class
+   We can achieve partial abstraction from abstract class
+   We can achieve full abstraction in interface
+   
+   
+=> Constructors are allowed in concrete class
+   Constructors are allowed in abstract class
+   Constructors are not allowed in interface class
+   
+   
+   POINTS :
+   ------
+   1. Interface cannot be private or protected but nested can 
+      be any thing
+      
+   2. Interface represent is a relationship
+   
+   3. Interface new features
+      1. default implemented methods allowed 1.8v
+      2. we can create static methods in interface 1.8v
+      3. private methods in interface 1.9v
+      4. private static methods in interface 1.9v
+      
+Marker Interface ?
+------------------
+Any Interface which does not contains any methods or variable
+is called marker interface.
+
+It is used to provide some extra features to object at runtime
+
+Ex:
+--
+1. clonable interface
+2. RMI
+3. serializable interface
+Syntex:
+------
+interface i1{
+
+}
+===================================================================
+   
