@@ -1,0 +1,17 @@
+This Keyword :
+--------------
+It is a keyword is a reference variable that refers to the current
+object
+
+
+Uses of This Keyword :
+---------------------
+-> It is used to refer the current class instance variable
+-> it is used to invoke the current class methods
+-> It is used to invoke the current class constructor :this()
+-> This is the first statement in the constructor call
+-> This keyword can be used to pass the argument in the method
+	-> This case is mainly used in the event handling
+-> This can be used to pass the argument in the constructor
+
+-> This keyword can be used to return the current class instance
