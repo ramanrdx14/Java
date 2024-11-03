@@ -1,0 +1,71 @@
+Encapsulation :
+---------------
+What is encapsulation ?
+=> Wrapping of variables and methods are wrapped into the single 
+   unit is called encapsulation.
+   
+=> Encapsulation is technically hiding the data from other classes
+   and these data can be accessed only through the member functions
+   of its own classes 
+
+=> Real World Example : capsule,mobile
+
+=> Technically every java class is the example of encapsulation
+
+=> Main Example of encapsulation is java bean classes.
+
+=> Encapsulation is achieved by declaring variable as private
+   and getter and setter methods.
+   
+=> For Example :
+   class Employee{
+   	private int salary;
+   	
+   	public void setSalary(int salary){
+   	this.salary = salary;
+   	}
+   	
+   	public int salary(){
+   	return salary;
+   	}
+   
+   }
+   
+Advantages of Encapsulation :
+-----------------------------
+1. Data Hiding
+2. Increase flexibility
+3. Testing Code is easy
+
+
+Java Bean Class :
+-----------------
+-> Must Implement Serializable interface
+-> class must contain public no-arg constructor
+-> class must have all private variables
+-> class must contain public getter and setter methods
+
+Tightly Encapsulated class :
+-----------------------------
+It contains all the variables as private
+
+
+Interview Questions:
+--------------------
+Abstraction : abstraction hides the implementation
+Encapsulation: It hide the data (information)
+
+Encapsulation = Data Hiding + Abstraction
+
+Abstraction can be achieved by Abstract class and Interface
+Encapsulation can be achieved by java bean class
+
+
+6 Main Pillers of OOPS :
+------------------------
+1. Class 
+2. Object & Methods
+3. Inheritance
+4. Polymorphism
+5. Abstraction
+6. Encapsulation
