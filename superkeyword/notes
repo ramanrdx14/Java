@@ -1,0 +1,31 @@
+Super Keyword :
+--------------
+The Super keyword is a reference variable which is used to refer immediate parent
+class object.
+
+1. It is used to refer the immediate parent class instance variable
+2. Super keyword is used to invoke the parent class method
+3. Super keyword is used to invoke the parent class constructor
+	-> If we don't provide super() in the constructor then the compiler provide it
+	   explicitly.
+	   
+	-> super() should be the first statement in the constructor.
+	
+	Points to remember :
+	--------------------
+	1. We cannot use this and super together.
+	
+	2. What is the difference between this and this()
+	
+	3. What is the difference between super and super()
+	
+	
+What is Final keyword ?
+-----------------------
+final keyword can used with variable,method,class 
+
+variable : cannot be change
+
+method   : cannot be overrided
+
+class    : cannot be inherited
