@@ -1,0 +1,55 @@
+Static Keyword :
+---------------
+Static keyword is the non-access modifiers 
+
+1. We can use the static keyword with 
+   1. variables
+   2. block
+   3. method
+   4. Inner class (not outer class)
+   
+   
+2. Use of Static keyword :
+   1. It is used to improve the share-ability
+   2. It is used for the memory management
+   3. Static member belongs to the class not Objects.
+   
+   
+===================================================================================
+Static Variables:
+----------------
+-> If we declare any variable as static then it is known as static variable.
+
+-> Static variables gets the memory allocated in the method area at the time of
+   class loading.
+   
+Points to Remember :
+--------------------
+1. We cannot create static local variable because the main use of static variable
+   is to improve share-ability but the local variable have limited 
+   
+2. If we declare any variable in the static method then it will be treated as the 
+   local variable only.
+   
+3. We cannot use the instance variable inside the static method but we can use 
+   static variable inside the instance method.
+   
+===================================================================================
+Static Block :
+--------------
+
+-> A block created using static keyword is called as static block.
+-> static block is executed at the time of class loading
+-> Use of static block
+   1. We can create static block to initialize static variables 
+   2. we can create static block to load native libraries at class loading
+   
+   syntex :
+   
+   static{
+   
+   ------
+   
+   }
+   
+   
