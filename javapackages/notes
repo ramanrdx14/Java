@@ -1,0 +1,133 @@
+packages:
+---------
+-> A package is group of similar classes and interfaces or sub-packages
+-> A package is a folder which contains the classes or interfaces (.class)
+
+Advantages:
+-----------
+1. maintainblity
+2. readeablity
+3. abstraction
+4. security
+5. packages can be used to resolve naming conflicts
+6. packages are used to achive reuseablity
+
+
+Types of packages:
+-----------------
+1. Predefined packages
+2. User defined packages
+	
+	
+How can we import the packages:
+-------------------------------
+to import the packages there are 3 ways :
+
+1. import java.package.subpackage.*;
+2. import packagename.subpackgename.classname/interfacename
+3. fully qualified name
+
+java.lang package is only package which is by default imported to every java
+class 
+
+
+User Defined package :
+-----------------------
+The package which is created by the user acording to the project requirement 
+is called user defined package.
+
+
+to create a package 
+
+package pkg_name;
+class Test{
+
+
+}
+
+
+To compile it we will use javac -d . PackageDemo.java(d represent the directory
+and . represent the current directory.)
+
+go inside the package and run the program
+
+
+Points to remember :
+--------------------
+1. Package Decleration must be the first statement in the program
+2. there can be only one package statement
+
+
+How to import packages :
+------------------------
+-> There are 3ways to import the packages in java
+
+1. import packagename.classname
+2. import packagename.*;
+3. by using fully qualified name
+
+
+Points to remember :
+--------------------
+1. It should be 2nd line of the program
+2. import statment doesnot load the class to the memory it only provide the 
+   accessablity to use the class.
+   
+   
+   
+What are Jar Files :
+--------------------
+-> Full Form is Java Archive Files
+-> It is compressed form of all the resources(.class,packages,images,etc..)
+
+How to create JAR Files:
+------------------------
+jar -cf  Jarfilename.jar files_names
+jar -cf  Jarfilename.jar *
+
+
+Viewing Jar Files Content :
+---------------------------
+jar tf jarfilename.jar (tf table format)
+ 
+
+How to execute JAR Files:
+-------------------------
+jar -xf jarfilename.jar (xf extract file) 
+
+
+MANIFEST.MF
+-----------
+-> this file is present in every jar file which represent the features of jar
+   files
+
+-> whenever we create jar file it automatically create under meta-inf
+
+-> the default menifest file contains 2 enteries in the form of name value
+   pairs but we can insert the more in MENIFEST.MF file
+   
+   
+-> How to insert the data in Manifest.MF file
+	1. create any text file with any name and provide the values in it using
+	   name value pairs
+	   
+	2. then provide the command in CMD
+	   jar -cmf JarFileName.jar textfilename.text
+	   
+   
+   Note:
+   -----
+   we have to provide the space after name and colon
+   
+
+Executable Jar File:
+--------------------
+The jar file which contains main method is called executable jar file
+
+To create the executable jar file we have to provide the Main-Class name 
+value pair in executable jar file
+
+
+
+
+ 
