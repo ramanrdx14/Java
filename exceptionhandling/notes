@@ -1,0 +1,235 @@
+What is the difference between Exception and error ?
+
+Error
+-----
+-> Galti 
+
+-> Error is the problem which does not allow us to compile and execute our program.
+-> It occours due to lack of java concepts or lack or system resources
+
+Types of Error :
+-----------------
+Compile Time Error
+Runtime Error
+
+
+Exception
+---------
+-> Blool
+
+-> Exceptions is the problem which is occoured at the runtime and which can we handled programatically
+-> Exceptions occours due to our programs
+
+
+Types of Exceptions :
+-------------------------
+-> PreDefined Exceptions 
+-> User Defined Exceptions
+   (Both can be of checked or unchecked exception)
+   
+ 
+   
+
+
+What is Exception ?
+--------------------
+-> Any Unwanted Event which disturbs our normal flow of the program 
+
+
+Checked Exception :
+-------------------
+--> his Type of Exceptions are checked by the compiler 
+--> If we don't report the checked exception then our program will not compile
+--> We have to use throws keyword or try-catch keyword
+--> Parent class of checked exception is "Exception"
+Unchecked Exception :
+---------------------
+--> This Type of Exceptions are not checked by the compiler 
+--> If we don't report the checked exception then our program will  compile
+--> Parent class of un-checked exception is "Runtime-Exception"
+--> It is not compulsory to use throws or try-catch
+
+
+Note:
+-----
+Exceptions are always occur as runtime it will not occur at compile time.Remember.
+
+
+
+===================================================================================================
+
+Working of Exception :
+----------------------
+--> If we don't handle exception then our program will terminate abnormally .
+--> This is not good programming practice
+--> If any exception is occur in any method then that method is responsible to handle it.
+--> The Method will create a exception object 
+--> If the method is not handling the exception then the caller method has responsibility 
+    to handle the exception.
+    
+--> If any caller method is not handling the exception object then the object will be transfered
+    to the JVM and default exception handler
+    
+--> Default exception handler will print the exception object and JVM will terminate the exception
+    object abnormally.
+  
+===================================================================================================
+Throw Keyword :
+---------------
+--> Throw keyword is used to create the exception object programmatically. 
+
+Syntex: throw new ExceptionClassName("msg");
+
+--> This is mainly used for user defined exception.
+
+====================================================================================================
+
+Handling of Exceptions :
+------------------------
+1. By Using Try-Catch
+2. By Using throws keyword
+
+====================================================================================================
+Throws Keyword :
+----------------
+-> Throws keyowrd is used to inform the caller method that this method can throw one of the listed type
+of exception.
+
+-> Throws keyoword bypass the generated exceptions from present method to the caller method.
+
+-> If the caller method wants to handle the exceptions then it has to use the try-catch block.
+
+Note:- Throws keyword cannot handel the exceptions.
+
+Syntex : throws ExceptionClassName,ExceptionClassName 
+			(It is used with the method signature)
+
+===================================================================================================
+What is difference between throws and throw keyword?
+
+=> "throw" keyword is used to create an exception object manually.
+   "throws" keyword is used to inform that this method can raise listed type of exception.
+   
+=> "throw" keyword is used inside the method name.
+   "throws" keyword is used with method signature.
+   
+=> "throw" keyword is used to allow only one exception class name at a time
+    "throws" keyword is able to allow more then one exception class name at a time.
+    
+=> "throw" keyword is mainly used for the unchecked exception
+   "throws" keyword is mainly used for checked exception.
+   
+   Example :
+   Test,Test2
+===================================================================================================
+Try Catch Block :
+-----------------
+
+try-block : this is used to provide the risky code the code in which there are the chances of 
+exception
+
+catch     : catch block is used to provide the maintenance code or alternative code to handle the
+            exception or (simply the exception handling code);
+
+
+Syntex :
+--------
+try{
+
+}catch(Exception e){
+
+}
+Try-catch flow :
+----------------
+
+Try Block : will be executed completely if there will be no exception inside the try block.
+
+Catch Block: will be executed only if there will be exception in the try-block.
+
+Note:
+----
+1. We can use multiple catch block with one try block.
+
+2. We have 3 ways to print exception :
+   1. System.out.println(e)
+   2. System.out.println(e.getMessage());
+   3. System.out.println(e.printStackTrace());
+   
+
+Finallly :
+----------
+Finally block is the block  which is executed always after the try block.
+Finally block contains resource closing block.
+Database connection,DB read and write code.
+===================================================================================================
+
+Java 7 Inhancements :
+--------------------
+
+
+1. Multi catch block
+---------------------
+
+	try{
+	
+	}catch(AE e){
+	
+	}catch(AIOOB e){
+	
+	}catch(Exception e){
+	
+	}
+	
+	OR:
+	
+	catch(AE | AIOOB | E e){
+	 sysout(e);
+	}
+	
+	
+2. try with resources
+----------------------
+Try with resource  is used to automatically close the resource which programmer has created .
+Note:- The resource must be auto closable (inherits auto closable interface)
+	:- Due to "try with resource" importance of finally block is reduced
+
+try(resource R1;Resource R2;Resource R3)
+{
+
+
+}
+
+
+=================================================================================================
+Try Catch Finally Combinations :
+--------------------------------
+Note: we can use either catch or finally or both with try block.
+
+What is the Difference between Try-Catch-finally ?
+=>  "Final" is keyword
+=>  "Finally" is block
+=>  "Finalize" is the method
+
+
+"Final Keyword" : It can we use with variable,class or method . It cannot be reassigned in variable
+                  class cannot be inherited and method cannot be overridden
+                  
+"Finally Block" : It is used for resource deallocation code
+
+"Finallize()"   : This method will be executed when the garbage collector will destroy the object
+                  prior to the System.gc() method
+                  
+                  
+==================================================================================================
+User defined Exceptions :
+-------------------------
+
+It can be checked or unchecked Exceptions:
+
+while we create the API it can be checked exceptions
+
+To create the checked exceptions we can use the Exception class
+
+To create the exceptions we can use the "RuntimeException class"
+
+
