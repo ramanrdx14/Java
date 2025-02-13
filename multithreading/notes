@@ -1,0 +1,246 @@
+Multitasking :
+--------------
+Performing the multiple task at a time.
+Example :
+---------
+opening VLC,Zoom,Notepad on single operating system
+
+1. Multitasking is achieved by context switching :
+2. Multitasking is used to increase the performance of the CPU
+3. Multitasking will be achieved by the two ways .
+	1. Process Based 
+	2. Thread Based 
+
+Multiprocessing :
+-----------------
+-> Multiprocessing is the part when the one system is connected with the multiple processor 
+  (CPU)
+
+-> Multiprocessing is best suitable at OS level
+
+Multithreading:
+---------------
+Multithreading is the process in which multiple threads(sub-process) will be executed at 
+same time.
+
+In Zoom we can chat,record,video,sound etc.
+
+Java API for multithreading :
+-----------------------------
+1. Thread
+2. Runnable
+3. ThreadGroup
+4. Concurrency
+5. ThreadPool
+
+================================================================================================
+
+What is the Difference between process and thread ?
+
+=> Process is a heavy weight task performing multiple task.
+   Thread is the light weight process performing single task.
+   
+=> Process does not depends on each other 
+   Threads depends on each other 
+   
+=> Context switching is difficult in the process (takes more time)
+   Context switching is easy in the threads (takes less time)
+   
+=> Process share different address space
+   Threads shares the same address space
+   
+=> Process requires synchronization 
+   Thread  requires synchronization
+   
+================================================================================================
+
+How to create a Thread ?
+=> We can create a thread using 2 methods 
+	1. Thread class
+	2. Runnable Interface
+	
+================================================================================================
+What is "Thread" ?
+=> It is a predefined class which is present inside the java.lang package.
+
+   class Thread implements Runnable {
+   	
+   	//constructor
+   	
+   	//start()
+   	//run()
+   
+   }
+
+
+what is Runnable ?
+=> Runnable is the interface present inside the java.lang package 
+   
+   interface Runnable{
+   
+   public void abstract run(){}
+   
+}
+ 
+Which is Better way to create Thread ?
+=> Runnable is better way to create thread, in java because if we inherit thread class then 
+   we were not able to inherit any other class as multiple inheritance is not supported in 
+   java but if we inherit Runnable interface then we can inherit more interfaces and inherit
+   the class also.
+
+================================================================================================
+Steps to create the Thread Using the Thread Class  :
+---------------------------------------------------------
+1. Inherit the Thread Class
+2. Override the Run Method
+3. Create the instance of the class
+4. start the thread
+
+
+What is the Use of start() ?
+=> It will register the "thread scheduler"
+=> It will execute all the mandetory functionalities of the thread.
+=> It will execute the run()
+
+==================================================================================
+Steps to create the Thread using the Runnable Interface :
+---------------------------------------------------------
+
+1. Inherits the Runnable Interface 
+2. override the run method
+3. create the instance of the class
+4. create the instance of the thread class and pass to the previous class instance
+   to the thread class constructor
+5. start the thread
+
+==================================================================================
+Life Cycle of the Thread :
+--------------------------
+1. Born :new thread is created
+2. Runnable : in this state thread comes with ready state
+3. Running : in this state thread perform the task 
+4. Non-Runnable:in this state thread does'not perform any task but when the 
+   thread is invoked then the thread goes to the runnable stage and then it goes
+   to the running stage.
+5. Dead:thread complete task and removed from the memory.
+
+Note: We can only invoke(start) the thread only once.
+If we try to start the thread again it will provide the exception.(IllegalThreadSE)
+=================================================================================
+
+Different Cases of Executing the Thread 
+---------------------------------------
+1. Performing the single task from single thread
+2. Performing the single task from multiple thread
+3. Performing the multiple task from single thread - not possible
+4. Performing multiple task from multiple thread
+
+===================================================================================
+
+Thread Class Methods :
+----------------------
+
+1. simple methods:
+------------------
+-> run()
+-> start()
+-> currentThread()
+-> isAlive()
+
+2. Naming Methods :
+---------------------
+-> getName();
+-> setName();
+
+3. Demon Thread Methods :
+-------------------------
+-> isDaemon()
+-> setDaemon()
+
+===================================================================================
+What is Daemon thread ?
+=> Daemon thread are the thread which are executed in the background of the 
+   another thread.
+   
+   Ex: Garbage Collector,word spelling checker thread
+   
+Note: If the thread is already started then we cant make it daemon
+      else it will provide Exception in "thread "main" Thread-0
+      java.lang.IllegalThreadStateException"
+      
+      
+      Main thread cannot be set as background thread and it is already
+      started and we are making it daemon then it will not make sense
+      
+      Daemon thread life depends on the another thread in which it 
+      is running
+      
+      Daemon thread inherites the properties/ nature from its parent
+===================================================================================
+
+Priority Based Methods :
+------------------------
+1. getPriority() : get the priority of the thread
+2. setPriority(int priority)  : set the priority of the thread
+
+What is thread priority?
+=> Thread Priority is the integer value of the thread, the thread having the high 
+   priority or high integer value will get the priority first execute to the JVM.
+   
+   -> Priority value exist from 1 to 10
+   -> Java provides 3 different predefined priority 
+   -> 1 : MIN_PRIORITY
+   -> 5 : NORM_PRIORITY
+   -> 10 : MAX_PRIORITY
+   
+  
+  Note : Priority depends on the platform (Windows does'not support thread priority)
+  
+  Note : By default the main thread has priority has priority 5 
+         By default the priority of the child thread inherit from the parent 
+         
+  If the multiple threads has the same priority then which thread will get chance to execute
+  will be depends upon the JVM thread scheduler
+  
+  
+===================================================================================================
+Prevent Thread Execution method :
+---------------------------------
+-> sleep(long mili) : this method is used to pause the running thread for the provided time period.
+
+
+
+-> yield()          : this method stops the current thread execution and give chance to execute 
+					  another thread.
+					  
+					  output is not constant in the case of yield method.
+					  
+					  till JDK 5th version the JDK internally calls the sleep method but from 6th
+					  version it provide the hint to thread scheduler that it want to stop. it 
+					  depends on the thread scheduler that it will accept or not.
+					  
+					  If the current thread is stops then it will totally depends on the thread 
+					  scheduler that which thread will execute.
+					  
+					  
+
+-> join()           : This method allows the thread to wait till the another thread completes the
+					  task.
+					  
+		
+==========================================================================================================			  
+What is difference between yield(),sleep(),join() ?
+=> picture .
+
+==========================================================================================================
+Thread Interrupting method ?
+
+-> interrupt()    : It is used to interrupt the sleeping and waiting thread other wise it is of no use
+					it throws an exception "java.lang.InterrupedException"
+					
+-> isInterruped() : It is used to check the thread interrupted status
+
+-> interrupted()  :  It is used to check the thread interrupted status . Note if the interrupted status is true
+					 then it will set the interrupted status to false.
+
+

@@ -1,0 +1,71 @@
+Callable and Future Interfaces:
+------------------------------
+
+1. We can create the thread using 3 ways :
+	1. By Extending the "Thread" class
+	2. By Implementing the "Runnable" interface
+	3. By Implementing Callable Interface
+	
+
+-> The Main advantage of callable interface is that it returns some value after the tread complete it task
+-> callable is the interface which is present inside the java.util.concurrent package
+-> It only contains 1methods so it is a functional interface
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+
+Example :
+----------
+
+ class Task2 implements Callable{
+	@Override
+	public Object call() throws Exception {
+		System.out.println(Thread.currentThread().getName());
+		return new ArrayList(List.of(10,20,30));
+	}
+}
+public class ThreadCallable1 {
+
+	public static void main(String[] args) throws InterruptedException, ExecutionException {
+		Task2  t2 = new Task2();
+		ExecutorService es = Executors.newFixedThreadPool(5);
+		Future f = es.submit(t2);
+		System.out.println(f.get());
+		
+		es.shutdown();
+	}
+}
+
+
+Future :
+--------
+-> future is an interface which is present in the java.util.concurrent package
+-> future is the result of the asynchronous result compution.
+-> In simple way future is used to store the returned value by the call() method which is returned by the thread.
+
+
+Runnable vs Callable :
+---------------------
+
+1. runnable : present inside java.lang package 
+   callable : present inside java.util.concurrent package
+   
+2. doesnot return value
+   it return value
+   
+   
+=======================================================================================================================================
+ThreadLocal :
+-------------
+Thread Local provides the thread-local values . It means that we can create the variable in the reference to the thread which can
+be manipulated or removed by the thread only
+
+Example we can pass the userid or transaction id for the users request.
+It introduced in 1.5 v
+present in java.lang package
+   

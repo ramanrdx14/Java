@@ -1,0 +1,275 @@
+Note : Whenever we execute the multiple thread then there may be a chance of inconsistent result which can lead to data 
+	   inconsistency.this type of problem can occur at banking application,reservation system,bus booking,movie booking.
+	
+	To solve the above problem we use the synchronization.
+	
+	
+Synchronization:
+----------------
+synchronization it is the process to control the multiple thread execution of the shared resource	
+	
+problem without Synchronization:(Advantages)
+---------------------------------------------
+1. Thread inconsistency
+2. Thread interference
+
+
+Types of synchronization:
+-------------------------
+1. Process synchronization
+2. Thread synchronization
+   1. mutual exclusive 
+   	  -> It can be achieved by the 3ways :
+   	  	 1. By "Synchronization method"
+   	  	 2. By "Synchronization block"
+   	  	 3. By "static synchronization"
+   2. cooporation (inter-thread-communication)
+   	 -> It can be achieved by the 3ways :
+   		 1. waite()
+   		 2. notify()
+   		 3. notifyAll()
+   		 
+==============================================================================================================
+Synchronization method :
+------------------------
+1. If we declare any method with synchronization keyword then it is said as synchronization block
+
+   synchronized void show(){
+   
+   }
+   
+   
+Backend Working of Synchronized method:
+--------------------------------------
+In the case of synchronization  the object lock comes into the picture . Every object has unique lock
+whenever any thread tries to enter the synchronized area that the tread has accquire the object lock.
+after acquire the lock the thread can access the synchronized area and all the other  thread 
+has to waite the synchronized area . after the tread finish the execution it will release the lock and
+other thread can acquire the lock and can enter the synchronized area.
+
+=============================================================================================================
+Synchronized Block:
+-------------------
+
+synchronized(Object reference) {
+
+
+}
+
+-> It is used to achieve the synchronization but for specific lines of code 
+-> the scope of synchronization block is smaller then synchronization method
+-> it is always preferebale to use syn-block
+
+============================================================================================================
+Static Synchronized Block :
+----------------------------
+All other working is same but the difference is it comes with class level lock.
+
+
+============================================================================================================
+
+wait() notify() and notifyAll() methods :
+-----------------------------------------
+-> These methods are used for inter-thread communication.
+-> These methods are of object class.
+-> To call these methods on any object thread should own the lock of that object thread should be inside the
+   synchronized area.
+   
+   
+   wait() : this method will relese the current running thread lock and wait until it will get the notification 
+            
+   notify(): this method is used to wakeup the single waiting thread and releases the object lock .
+   
+   notifyAll(): this method is used to wakeup all the waiting thread and releases the object lock . 	
+   
+   
+   
+what is the difference between sleep() and wait() :
+----------------------------------------------------
+sleep is static method.
+wait  is non-static method
+
+
+sleep is thread class method
+wait is object class method
+
+sleep will acquire lock when it goes to sleep state and will not release the lock
+waie will acquire  lock when it goes to waite and will release the lock 
+
+
+====================================================================================================================
+Anonymous thread Creation :
+---------------------------
+public class AnonymousThread {
+
+	public static void main(String[] args) {
+		Thread t1 = new Thread() {
+			@Override
+			public void run() {
+				
+				System.out.println("hello");
+			}
+		};
+		
+		t1.start();
+		
+	}
+
+}
+
+=====================================================================================================================
+Disadvantages of synchronization :
+----------------------------------
+-> It will decrease the application performance because the thread has to waite for the object lock.
+-> Due to synchronization deadlock condition may occur.
+
+
+What is Deadlock ?
+------------------
+Dealock is the situation where the one thread is waiting for the object lock that acquired by the another thread
+and another thread is waiting for the object lock which is acquired by the 1st thread.
+In this type of situation both the thread will wait for the locks and both will go to the infinite situation.
+
+
+What are the problems with "synchronized keyword"
+------------------------------------------------- 
+1. If we want to acquire the lock in the 1st method and release the lock in the second method then this cannot be done
+   with the synchronized block 
+   
+2. There is no flexiblity to try for the block without waiting 
+
+3. There is no way to get the list of all waiting threads
+
+4. We cannot judge which thread can acquire the lock when the first thread will release the lock
+
+
+To Overcome these Problem :
+---------------------------
+java introduced java.util.concurrent.locks in JDK 1.5v
+	
+	-> Lock Interface
+	-> ReEnterent Lock class
+	
+	
+==========================================================================================================================
+Lock Interface :
+----------------
+Lock interface is used to achieved synchronization same as synchronized blocks.
+
+syntex:
+-----
+
+public interface Lock{
+	void Lock();
+	void unlock();
+	boolean tryLock();
+	boolean tryLock(Long time,Timeunit unit)throws Interruped Exception
+}
+
+ ReEnterent Lock class :
+ ----------------------
+ It is the implemented class for the lock Interface
+ 
+note : unlock() shoud be always used inside the finally block
+
+
+==========================================================================================================================
+Thread Groups :
+---------------
+-> It is the group of several threads in the single object .
+-> A thread-group can contain multiple thread group.
+-> The thread group creates a tree in which every thread group-will have a single parent thread group.
+-> System is the parent thread group of all the thread group .
+
+-> Every thread group belongs to some thread group . 
+-> System thread group is the root thread group of all thread group in java.
+-> Main thread  belongs to the main thread  group.
+-> The main advantage of thread group is that we can perform the several operations to improve the application information.
+
+-> ThreadGroup is the class present in Java.lang package
+-> Constructors of thread group.
+-> 1. public ThreadGroup(String name)
+   2. public ThreadGroup(ThreadGroup name,String name)
+   
+   Methods:
+   -------
+   1. activeCount();
+   2. activeGroupCount();
+   3. getMaxPriority();
+   4. getName();
+   5. getParent();
+   6. setMaxPriority();
+   7. list();
+   8. isDaemon();
+   9. setDaemon();
+   10. suspend();
+   11. destroy();
+   
+   
+   
+=======================================================================================================================================
+Thread Pool :
+-------------
+Thread Pool Represent the group of worker thread that are waiting for the job can be reused man times
+
+ThreadPool Framework is also called as "Executer framework"
+
+ThreadPool is introduced in java 1.5v
+
+Advantage :
+----------
+It saves lot of time in creating the threads and providing the jobs to them which lead to better performance of the
+application
+
+-> Thread Pool is also implemented in servlet & JSP
+
+
+Thread Pool contains the following Class and Interface :
+--------------------------------------------------------
+1. Executers (class)
+2. ExecuterService
+
+Executors class :
+-----------------
+-> Executors class provides factory and utility methods for the ExecutorService,Executor,ThreadFactory
+   ScheduleExecutors Service and Callable.
+   
+   Methods:
+   --------
+   1. Executors.newFixedThreadPool(0)
+   2. Executors.newSingleThreadExecutor()
+   
+   
+ExecutorService :
+-----------------
+
+-> ExecutorService is the Interface which allows us to execute the thread task asynchronously
+
+-> It Maintain the pool of the threads and help them to assign them the tasks . It provide the 
+   facility to queue up the task until there are free thread available.
+   
+-> ExecutorService defines the methods that execute the thread and return some result
+
+methods:
+--------
+use to execute the executer service.
+
+1. execute(Runnable r)
+
+2. submit(Runnable r/Callable c)
+
+3. invokeAny(Collections c)
+
+4. invokeAny(Collections c)
+
+below methods use to shutdown the executer service
+
+shutdownNow()
+
+
+Some Risk:
+---------
+1. Deadlock chances
+2. Thread interference
+3. Thread Leakage
+
