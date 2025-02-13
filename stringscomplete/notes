@@ -1,0 +1,149 @@
+String :
+--------
+-> String is a sequence of characters or string is an array of characters
+
+Ex: char[] arr = {'a','b','c'}
+
+To handle the char sequence java has provided the an interface i.e CharSequence
+String is the non-primitive data type.
+
+Syntex :
+-------
+public final class String extends Object implements Serialzable,Comparable,CharSequence
+{
+
+}
+To Create a String or to Perform the string operations  java has provided the predefined
+classes.
+
+1. java.lang.String
+2. java.lang.StringBuilder
+3. java.lang.StringBuffer
+4. java.lang.StringTokenizer
+
+String is the class and we can create the String class object. but we can create the 
+string class object in 2 ways :
+
+1. String s = new String("");
+2. Strings  = "" ; 
+
+When we create the String class object , then the objects created are IMMUTABLE
+whenever we create the String objects it allocates memory in the special memory 
+area is called "String Constant Pool" or "String Literal Pool"
+
+========================================================================================
+Difference between creating String Object by "new keyword" and "String literal" ?
+
+=> If we create a String object using the new keyword then the object is created in the
+   heap area . 
+   
+=> If we have provided any String literal in the String constructor then
+   2 objects will be created in the StringConstent Pool .
+   
+=> Properties of the StringConstant Pool or String Literal Pool
+   1. SCP Stores the String Literal Objects 
+   2. Whenever the String literal objects are created in the SCP first it will check
+      weather the object  is present in the SCP or not if it is not present then it 
+      will create the new Object and then the reference variable will be point to the
+      same object.
+      
+========================================================================================
+Why String Objects are Immutable ?
+=> Immutable means if we change the value then the value will not change.
+
+=> String Objects are Immutable because if we change any String Object then it will
+   create a  new Object and will not effect other reference values.
+   
+   Note: Strings are not immutable String objects are immutable.
+   
+=> why String is final ?
+  => String class is final because we cannot inherit the string class thus we are not
+     able to change the string properties.
+     
+========================================================================================
+String Constructors and Methods:
+--------------------------------
+
+validating Input of use :
+------------------------
+1. length()
+2. trim()
+3. isEmpty()
+4. isBlank()
+
+
+Comparing Two String :
+-----------------------
+1. equals()
+2. equalsIgnoreCase()
+3. compareTo()
+4. compareToIgnoreCase()
+
+Concatination :
+--------------
+1. +
+2. s1.concat(s2);
+
+
+Substring:
+----------
+1. substring()
+2. subsequence();
+
+Replacing or removing characters:
+---------------------------------
+1. replace()
+2. replaceAll()
+3. replaceFirst();
+
+Searching Character In the String :
+------------------------------------
+1. IndexOf();
+2. lastIndexof();
+3. contains();
+4. charAt();
+5. endsWith();
+6. startsWith();
+
+Case Conversion :
+------------------
+1. toUpperCase();
+2. toLowerCase();
+
+Type Conversion :
+-----------------
+1. toCharArray()
+2. String.valueOf(int i) 
+
+===============================================================================================
+
+What is the difference between equals and == ?
+=> Equals() method is the "object" class method. it is used for the reference comparison.
+=> == is also used for the reference comparison.
+
+
+Note : But in the string the .equals() method is used for the content comparison.
+
+===============================================================================================
+StringBuffer class:
+-------------------
+1. In some case the string object is not use full we have to update in same object in that case
+   the StringBuffer is useful.
+
+2. It is mutable Object
+
+StringBuilder class:
+--------------------
+StringBuilder is same as StringBuffered but one difference is that all the methods in the 
+StirngBuilder are non-synchronized but all the method in the StringBuffer is synchronized.
+
+===============================================================================================
+StringTokenizer class :
+------------------------
+It divides the string into various tokens .
+
+StringTokenizer st = new StringTokenizer("Hello How Are you ");
+		System.out.println(st.countTokens());
+		while(st.hasMoreTokens()) {
+			System.out.println(st.nextToken());
+		}
